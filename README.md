@@ -121,6 +121,7 @@ pipeline {
 }
 ```
 
-<img width="1570" height="311" alt="image" src="https://github.com/user-attachments/assets/d08973f2-8e93-4fc7-9d8a-13caa591c280" />
-<img width="1865" height="650" alt="image" src="https://github.com/user-attachments/assets/d0d054ae-6561-42bc-9c01-f4f94abb979c" />
+![](image.png)
+
+![](image1.png)
 
