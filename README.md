@@ -103,7 +103,6 @@ pipeline {
             steps{
                 script{
                     env.ImageTag = params.Tag?: env.CommitHash
-                    
                     app = docker.build("mosakrmov01/task1:${ImageTag}")   
                 }
             }
