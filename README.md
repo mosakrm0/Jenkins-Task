@@ -28,11 +28,12 @@ Active: active (running) since Tue 2018-11-13 16:19:01 +03; 4min 57s ago
  ```
 
 ## 2. Build a pipeline that builds container image and pushes it to private dokcer registry
-### 1. Add credentials
+### 1. Installed the default Plugins then installed Docker Pipeline Plugin.
+### 2. Add credentials
 Get your Dockerhub and Github Token and put it in jenkins credentials.
 Use Pipeline syntax to generate the git script to use it in Pipeline
 
-### 2. Building the pipline
+### 3. Building the pipline
 ```
 node {
     def app
