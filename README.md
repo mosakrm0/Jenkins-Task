@@ -2,13 +2,13 @@
 ## 1. Deploy jenkins on a server baremetal way (not using docker)
 ### From the documents: 
 ### 1. install java:
-```
+```sh
 sudo apt update
 sudo apt install fontconfig openjdk-21-jre
 java -version
  ```
 ### 2. install jenkins
-```
+```sh
 sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \
   https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
 echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
@@ -18,7 +18,7 @@ sudo apt update
 sudo apt install jenkins
  ```
 ### 3. start the jenkins service
-```
+```sh
 sudo systemctl enable jenkins
 sudo systemctl start jenkins
 sudo systemctl status jenkins
@@ -34,7 +34,7 @@ Get your Dockerhub and Github Token and put it in jenkins credentials.
 Use Pipeline syntax to generate the git script to use it in Pipeline
 
 ### 3. Building the pipline
-```
+```groovy
 node {
     def app
     stage('Fetch') {
@@ -53,7 +53,7 @@ node {
 
 ## 3. Build a pipeline that deploys the application to your server.
 ### 1. Run the deploy pipeline
-```
+```groovy
 node {
     stage('run'){
         withDockerRegistry(credentialsId: 'dockerhub') {
@@ -67,7 +67,7 @@ node {
 
 ### 1. In Triggers Put Build Periodically  ` @daily `
 ### 2. Run the cronjob pipeline
-```
+```groovy
 node {
     stage('check'){
         sh '''
@@ -81,7 +81,7 @@ node {
 
 ## 5. Edit the Build pipeline to make developer be able to choose the build branch using a dropdown menu and choose a custom image tag and default to the sha256 commit hash if not tag was specified.
 
-```
+```groovy
 node {
     def app
 }
